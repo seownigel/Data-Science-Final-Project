@@ -1,0 +1,18 @@
+from PIL import Image                                                            
+import numpy as np
+import matplotlib.pyplot as plt
+                                                   
+i = Image.open ('/Users/Nigel/Desktop/Data Science Final Project/category/17_Dresses/16_0.jpg')
+iar = np.asarray(i)
+
+plt.imshow(iar)
+plt.show()
+
+from PIL import Image                                                            
+import numpy as np
+import matplotlib.pyplot as plt
+                                                   
+i = Image.open ('/Users/Nigel/Desktop/Data Science Final Project/category/17_Dresses/16_0.jpg')
+iar = np.asarray(i)
+
+print (iar)
