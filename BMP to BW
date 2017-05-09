@@ -1,0 +1,45 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May  8 09:48:40 2017
+
+@author: Nigel
+"""
+
+from PIL import Image
+import os
+
+root_dir = "/Users/Nigel/Desktop/Data Science Final Project/category/BMP Images 2"
+target_dir = "/Users/Nigel/Desktop/Data Science Final Project/category/BMP Images BW"
+image_paths = ["17_Dresses", 
+               "18_Tops",
+               "19_Skirts",
+               "20_Outerwear",
+                "21_Bottoms", 
+                "585_One-Piece", 
+                "Bodysuits"]
+
+
+
+def create_new_bmp_file(filename, path):
+    name, sufix = filename.split(".")
+    
+    new_name = os.path.join(target_dir, path, name+".bmp")
+    new_img.save(new_name,"bmp")
+    
+def convertToGray(img, path, filename):
+    new_img = img.convert('1')
+    new_name = os.path.join(target_dir, path, filename)
+    new_img.save(new_name, "bmp")
+    
+
+for path in image_paths[:7]:
+    real_path = os.path.join(root_dir, path)
+    filenames = os.listdir(real_path)
+    for filename in filenames:
+        if filename[0] != ".":
+            print filename
+            file_real_path = os.path.join(real_path, filename)
+            img = Image.open(file_real_path)
+            new_img = img.resize( (100, 100) )
+            convertToGray(new_img, path, filename)
