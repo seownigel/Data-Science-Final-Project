@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/yishan/PycharmProjects/ClothesClassification/model_googlenet.model"
+all_model_checkpoint_paths: "/home/yishan/PycharmProjects/ClothesClassification/model_googlenet.model"
